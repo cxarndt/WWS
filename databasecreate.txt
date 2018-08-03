@@ -1,0 +1,47 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Erstellungszeit: 03. Aug 2018 um 16:09
+-- Server-Version: 10.1.32-MariaDB
+-- PHP-Version: 7.2.5
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Datenbank: `inventarwws`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `inventar`
+--
+-- Erstellt am: 03. Aug 2018 um 12:09
+--
+
+CREATE TABLE IF NOT EXISTS `inventar` (
+  `EAN` varchar(13) COLLATE latin1_german1_ci NOT NULL,
+  `EAN_WG` int(3) NOT NULL,
+  `EAN_TYPE` int(5) NOT NULL,
+  `EAN_INDIV` int(4) NOT NULL,
+  `EAN_CHKSM` int(1) NOT NULL,
+  `NAME` varchar(256) COLLATE latin1_german1_ci NOT NULL,
+  `STATUS` varchar(10) COLLATE latin1_german1_ci NOT NULL,
+  `IP` varchar(15) COLLATE latin1_german1_ci NOT NULL,
+  `TUA1TMSTP` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `TUA2TMSTP` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `ONSITE_TMSTP` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `USER` varchar(100) COLLATE latin1_german1_ci NOT NULL,
+  `PACK_TMSTP` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `BACK_TMSTP` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci;
+
+--
+-- RELATIONEN DER TABELLE `inventar`:
+--
+COMMIT;
